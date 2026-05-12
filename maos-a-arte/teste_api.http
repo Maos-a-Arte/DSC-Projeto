@@ -1,0 +1,10 @@
+### PASSO A: CRIAR O PEDIDO (Setup)
+POST http://localhost:3000/api/v1/orders/1/confirm
+Content-Type: application/json
+
+{
+  "id": 1,
+  "clienteId": "CLIENTE-TESTE",
+  "total": 500.00,
+  "status": "PENDENTE"
+}

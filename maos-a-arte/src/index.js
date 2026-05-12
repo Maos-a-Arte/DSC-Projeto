@@ -1,22 +1,24 @@
 const express = require('express');
-const { AppDataSource } = require("./data-source");
+require('reflect-metadata');
+const { AppDataSource } = require('./data-source'); 
+
+const orderRoutes = require('./infrastructure/routes/orderRoutes');
 const productRoutes = require('./infrastructure/routes/productRoutes');
 
 const app = express();
 app.use(express.json());
 
-// Inicia a conexão com o Banco de Dados
+// Rotas
+app.use('/api/v1/orders', orderRoutes);
+app.use('/api/v1/products', productRoutes);
+
+const PORT = 3000;
+
 AppDataSource.initialize()
     .then(() => {
-        console.log("✅ BANCO DE DADOS CONECTADO (DOCKER)!");
-        
-        // Só libera as rotas se o banco conectar
-        app.use('/api/v1/produtos', productRoutes);
-
-        app.listen(3000, () => {
-            console.log("🚀 Servidor Mãos à Arte rodando na porta 3000");
+        console.log("✅ BANCO DE DADOS CONECTADO!");
+        app.listen(PORT, () => {
+            console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
         });
     })
-    .catch((error) => {
-        console.log("❌ Erro ao conectar no banco:", error);
-    });
+    .catch((error) => console.log("❌ Erro no banco:", error));

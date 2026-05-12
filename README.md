@@ -27,8 +27,8 @@ O projeto já conta com persistência real de dados e arquitetura seguindo os pr
 ## ⚖️ Governança e Papéis
 | Frente / Módulo | Owner (Maintain) | Revisor de Issues (Triage) |
 
-| Backend | Gabriel Tadeu Costa Sanmartin |  |
+| Backend | Gabriel Tadeu Costa Sanmartin | Kauan Da Silva Lopes |
 
-| Base de Dados | Gabriel Tadeu Costa Sanmartin | |
+| Base de Dados | Gabriel Tadeu Costa Sanmartin | Kauan Da Silva Lopes |
 
 

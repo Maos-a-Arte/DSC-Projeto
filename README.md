@@ -23,3 +23,8 @@ O projeto já conta com persistência real de dados e arquitetura seguindo os pr
 2. Na raiz, suba o banco: `docker-compose up -d`.
 3. Instale as dependências: `npm install`.
 4. Inicie a aplicação: `node src/index.js`.
+
+## ⚖️ Governança e Papéis
+| Frente / Módulo | Owner (Maintain) | Revisor de Issues (Triage) |
+| Backend | Gabriel Tadeu Costa Sanmartin |  |
+| Base de Dados | Gabriel Tadeu Costa Sanmartin | |

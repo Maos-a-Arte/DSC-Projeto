@@ -74,3 +74,35 @@ Nesta seção, detalhamos os Casos de Uso (UC) que compõem o escopo do projeto 
     * A nota deve ser obrigatória (1 a 5 estrelas).
     * O comentário deve ser validado para não exceder o limite de caracteres
 
+Executando o projeto e validando o endpoint GET /api/v1/products
+A seguir os passos mínimos para executar localmente e verificar o endpoint de produtos (funciona mesmo sem banco de dados, pois há um repositório em memória para testes).
+
+Na raiz do projeto, instale dependências:
+
+npm install
+Inicie a aplicação:
+
+npm start
+O servidor padrão roda em http://localhost:3000.
+Observação: o bootstrap tenta conectar ao banco, mas foi ajustado para iniciar o servidor mesmo se o PostgreSQL não estiver ativo.
+Verifique o endpoint (GET):
+Pelo navegador:
+
+http://localhost:3000/api/v1/products
+Pelo terminal (curl):
+
+curl -i http://localhost:3000/api/v1/products
+Resposta esperada quando não há produtos:
+
+{"data":[]}
+(Opcional) Criar um produto de exemplo e reconsultar:
+
+curl -X POST -H "Content-Type: application/json" \  -d '{"name":"Vaso de Ceramica Artesanal","description":"Vaso pintado a mao","price":120.5,"weight":0.8,"dimensions":{"a":15,"l":10,"p":8}}' \  http://localhost:3000/api/v1/productscurl -i http://localhost:3000/api/v1/products
+Testes automatizados (entrega compacta em for_professor):
+
+cd for_professornpm installnpm test
+Os testes usam Jest + Supertest e validam GET /api/v1/products com o repositório em memória.
+Informação adicional:
+
+Branch com a entrega: feature/uc01-04-get-products
+Pasta com pacote para o professor: for_professor (contém código enxuto + testes e README específico).

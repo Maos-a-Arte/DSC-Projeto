@@ -23,6 +23,10 @@ class ProductService {
 
     return await this.productRepository.save(newProduct);
   }
+
+  async getAllProducts() {
+    return await this.productRepository.findAll();
+  }
 }
 
 module.exports = ProductService;

@@ -17,8 +17,12 @@ const PORT = 3000;
 AppDataSource.initialize()
     .then(() => {
         console.log("✅ BANCO DE DADOS CONECTADO!");
+    })
+    .catch((error) => {
+        console.log("⚠️ Erro no banco (seguindo em modo de desenvolvimento):", error);
+    })
+    .finally(() => {
         app.listen(PORT, () => {
             console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
         });
-    })
-    .catch((error) => console.log("❌ Erro no banco:", error));
+    });

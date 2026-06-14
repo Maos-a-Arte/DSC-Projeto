@@ -2,8 +2,8 @@ const express = require('express');
 require('reflect-metadata');
 const { AppDataSource } = require('./data-source'); 
 
-const orderRoutes = require('./infrastructure/routes/orderRoutes');
-const productRoutes = require('./infrastructure/routes/productRoutes');
+const orderRoutes = require('./infrastructure/routes/OrderRoutes');
+const productRoutes = require('./infrastructure/routes/ProductRoutes');
 
 const app = express();
 app.use(express.json());
